@@ -4,6 +4,9 @@ app=Flask(__name__)
 
 books=[]#a list of book objects,each is a dict{id:int,title:str,author:str,price:float}
 idCounter=1
+@app.route("/")
+def hello():
+    return "This is a bookstore demo to try CRUD."
 @app.route("/books",methods=["GET"])
 def getBooks():
     return jsonify(books),200
